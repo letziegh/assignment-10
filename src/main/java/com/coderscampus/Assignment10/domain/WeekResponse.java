@@ -87,18 +87,6 @@ public class WeekResponse {
             this.sourceUrl = sourceUrl;
         }
 
-        @Override
-        public boolean equals(Object o) {
-            if (this == o) return true;
-            if (o == null || getClass() != o.getClass()) return false;
-            Meal meal = (Meal) o;
-            return id == meal.id && servings == meal.servings && Objects.equals(title, meal.title) && Objects.equals(imageType, meal.imageType) && Objects.equals(readyInMinutes, meal.readyInMinutes) && Objects.equals(sourceUrl, meal.sourceUrl);
-        }
-
-        @Override
-        public int hashCode() {
-            return Objects.hash(id, title, imageType, readyInMinutes, servings, sourceUrl);
-        }
 
         @Override
         public String toString() {
