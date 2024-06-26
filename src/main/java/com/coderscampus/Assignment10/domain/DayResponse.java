@@ -1,9 +1,10 @@
 package com.coderscampus.Assignment10.domain;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.List;
-import java.util.Objects;
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DayResponse {
     private List<Meal> meals;
     private Nutrients nutrients;
@@ -27,11 +28,17 @@ public class DayResponse {
     // getters and setters
 
     public static class Meal {
+        @JsonProperty("id")
         private int id;
+        @JsonProperty("title")
         private String title;
+        @JsonProperty("imageType")
         private String imageType;
+        @JsonProperty("readyInMinutes")
         private String readyInMinutes;
+        @JsonProperty("servings")
         private int servings;
+        @JsonProperty("sourceUrl")
         private String sourceUrl;
 
         public int getId() {
@@ -100,9 +107,13 @@ public class DayResponse {
     }
 
     public static class Nutrients {
+        @JsonProperty("calories")
         private double calories;
+        @JsonProperty("protein")
         private double protein;
+        @JsonProperty("fat")
         private double fat;
+        @JsonProperty("carbohydrates")
         private double carbohydrates;
 
         public double getCalories() {
